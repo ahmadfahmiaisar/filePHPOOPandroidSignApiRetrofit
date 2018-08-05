@@ -12,6 +12,7 @@ $response = array();
                 $response['id'] = $user['id'];
                 $response['email'] = $user['email'];
                 $response['username'] = $user['username'];
+                $response['level'] = $user['level'];
             } else{
             $response['error'] = true;
             $response['message'] = "invalid username and password";
