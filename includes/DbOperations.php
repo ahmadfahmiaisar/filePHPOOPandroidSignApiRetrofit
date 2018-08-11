@@ -25,7 +25,7 @@
         }
         public function userLogin($username,$pass){
             $password = md5($pass);
-            $stmt = $this->con->prepare("SELECT id FROM users WHERE username = ? AND password = ?");
+            $stmt = $this->con->prepare("SELECT id FROM users_dolanan WHERE username = ? AND password = ?");
             $stmt->bind_param("ss",$username,$password);
             $stmt->execute();
             $stmt->store_result();
@@ -33,7 +33,7 @@
         }
 
         public function getUserByUsername($username) {
-            $stmt = $this->con->prepare("SELECT * FROM users WHERE username = ?");
+            $stmt = $this->con->prepare("SELECT * FROM users_dolanan WHERE username = ?");
             $stmt->bind_param("s",$username);
             $stmt->execute();   
             return $stmt->get_result()->fetch_assoc();
